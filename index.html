@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Crawljax Plugins : My useful plugins for Crawljax. :-)" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Crawljax Plugins</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/juzraai/Crawljax-Plugins">View on GitHub</a>
+
+          <h1 id="project_title">Crawljax Plugins</h1>
+          <h2 id="project_tagline">My useful plugins for Crawljax. :-)</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/juzraai/Crawljax-Plugins/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/juzraai/Crawljax-Plugins/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>
+<a name="crawljax-plugins" class="anchor" href="#crawljax-plugins"><span class="octicon octicon-link"></span></a>Crawljax Plugins</h1>
+
+<p><strong>My useful plugins for <a href="http://crawljax.com">Crawljax</a> + some handy classes!</strong></p>
+
+<h2>
+<a name="savehtml---html-output-plugin" class="anchor" href="#savehtml---html-output-plugin"><span class="octicon octicon-link"></span></a>SaveHTML - HTML output plugin</h2>
+
+<p>HTML output plugin for Crawljax. It's an OnNewStatePlugin, so it's called when the DOM changes in the browser, so you can <strong>save every state to file</strong>. This plugin provides that each state will be stored <strong>only once</strong>, equality testing is based on MD5 hashes. Filenames will be <strong>generated from URLs</strong>, SaveHTML will create the directories just as they are in the URL. Directories and files will be created within the <strong>Crawljax output directory</strong>, so you should specify this in the Crawljax configuration. With this, you can store a mirror of a site, but links will not be modified, so they won't work in all cases. If Crawljax meets different DOM states on the same URL, SaveHTML will add a counter to the end of the filename.</p>
+
+<h2>
+<a name="handy-classes" class="anchor" href="#handy-classes"><span class="octicon octicon-link"></span></a>Handy classes</h2>
+
+<h3>
+<a name="url2file---convert-url-to-filename" class="anchor" href="#url2file---convert-url-to-filename"><span class="octicon octicon-link"></span></a>URL2File - Convert URL to filename</h3>
+
+<p>Useful tool for converting an URL to a filename. It builds up a directory path and a filename, so you can create the directories first, then write the file. A '.html' suffix will be added if the URL doesn't end with '.html' or '.htm'. URLs with '/' ending will get an 'index.html' suffix. Special characters will be replaced with '_'.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Crawljax Plugins maintained by <a href="https://github.com/juzraai">juzraai</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-41050675-3");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+
+  </body>
+</html>
