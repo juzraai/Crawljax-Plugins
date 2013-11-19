@@ -3,9 +3,11 @@ package hu.juranyi.zsolt.common;
 /**
  * Useful tool for converting an URL to a filename. It builds up a directory
  * path and a filename, so you can create the directories first, then write the
- * file. A '.html' suffix will be added if the URL doesn't end with '.html' or
- * '.htm'. URLs with '/' ending will get an 'index.html' suffix. Special
- * characters will be replaced with '_'.
+ * file. Special characters will be replaced with '_'. URLs ending with '/' will
+ * get an 'index.html' suffix. URL2File can force '.html' or '.htm' extension if
+ * you wish, use the two-parameter constructor, and pass a true as the 2nd
+ * argument. See URL2FileTest for examples, you can find it on GitHub:
+ * http://juzraai.github.io/Crawljax-Plugins
  * 
  * @author Zsolt Juranyi
  * 
@@ -17,18 +19,36 @@ public class URL2File {
 	 * (http://en.wikipedia.org/wiki/Uniform_resource_locator)
 	 */
 
+	// input:
 	private String url;
+	private boolean forceHtmlExtension;
+	// output:
 	private String directory;
 	private String file;
 
 	/**
-	 * Creates the directory name and the filename from the given URL.
+	 * Creates the directory name and the filename from the given URL. By
+	 * default, '.html' extension will not be forced.
 	 * 
 	 * @param url
 	 *            URL to create the path and filename from.
 	 */
 	public URL2File(String url) {
+		this(url, false);
+	}
+
+	/**
+	 * Creates the directory name and the filename from the given URL. If second
+	 * argument is true, the filename will surely have '.html' or '.htm' suffix.
+	 * 
+	 * @param url
+	 *            URL to create the path and filename from.
+	 * @param forceHtmlExtension
+	 *            Whether to add '.html' suffix to the filename or not.
+	 */
+	public URL2File(String url, boolean forceHtmlExtension) {
 		this.url = url;
+		this.forceHtmlExtension = forceHtmlExtension;
 		build();
 	}
 
@@ -61,8 +81,10 @@ public class URL2File {
 			file = "index.html"; // generate filename: domain/path/index.html
 		}
 
-		if (!file.endsWith(".html") && !file.endsWith(".htm")) {
-			file = file + ".html";
+		if (forceHtmlExtension) {
+			if (!file.endsWith(".html") && !file.endsWith(".htm")) {
+				file = file + ".html";
+			}
 		}
 	}
 

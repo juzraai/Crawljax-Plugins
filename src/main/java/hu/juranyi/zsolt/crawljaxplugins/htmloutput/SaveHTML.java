@@ -39,7 +39,7 @@ public class SaveHTML implements OnNewStatePlugin {
 			String outdir = ctx.getConfig().getOutputDir().getAbsolutePath();
 
 			// build output
-			URL2File u2f = new URL2File(url);
+			URL2File u2f = new URL2File(url, true);
 			String dir = u2f.getDirectory();
 			String file = u2f.getFile();
 			String fn = outdir + "/" + dir + "/" + file;

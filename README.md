@@ -9,4 +9,4 @@ HTML output plugin for Crawljax. It's an OnNewStatePlugin, so it's called when t
 ##Handy classes
 
 ###URL2File - Convert URL to filename
-Useful tool for converting an URL to a filename. It builds up a directory path and a filename, so you can create the directories first, then write the file. A '.html' suffix will be added if the URL doesn't end with '.html' or '.htm'. URLs with '/' ending will get an 'index.html' suffix. Special characters will be replaced with '_'.
+Useful tool for converting an URL to a filename. It builds up a directory path and a filename, so you can create the directories first, then write the file. Special characters will be replaced with '_'. URLs ending with '/' will get an 'index.html' suffix. URL2File can force '.html' or '.htm' extension if you wish. See [URL2FileTest](https://github.com/juzraai/Crawljax-Plugins/blob/master/src/test/java/hu/juranyi/zsolt/common/URL2FileTest.java) for examples.
